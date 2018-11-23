@@ -1,0 +1,36 @@
+# 环境
+- 详情
+- python 3.6
+- requests:请求方法
+- xlrd
+- openpyxl
+- HTMLTestRunner_api
+- https://www.cnblogs.com/insane-Mr-Li/p/9092619.html
+## xlwt 模块： 对excal 进行写入
+## xlrd 模块 ： 对excal 进行读取
+- 常用的单元格属性
+    - 0.empty 为空
+    - 1.string(text)
+    - 2.number
+    - 3.date 
+    - 4.boolean
+    - 5.error
+    - 6.blank(空白表格)
+- excal 中重要的方法就是book 和sheet 的操作
+- 打开excal 读取数据
+data = xlrd.open_workbook(filename)
+### 通过索引顺序获取
+table = data.sheets ()[0]
+### 通过索引顺序获取
+table = data.sheet_by_index(sheet_index)
+### 通过名称获取
+table = data.sheet_by_name(sheet_name)
+
+### 以上三个函数都会返回一个xlrd.sheet.Sheet()对象
+
+names = data.sheet_names() # 返回所有表的名字
+
+data.sheet_loaded(sheet_name or index) # 检查摸个sheet 是否导入完毕
+
+- 对行的操作
+    - 
