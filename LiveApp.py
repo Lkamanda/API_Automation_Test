@@ -5,7 +5,8 @@ import random
 import time
 import re
 import logging
-import os,sys
+import os
+import sys
 import xlrd
 # try:
 #     import xlrd
@@ -254,7 +255,9 @@ def sendMail(text):
 
 
 def main():
-    errorTest = runTest('TestCase/TestCasePre.xlsx')
+    # errorTest = runTest('TestCase/TestCasePre.xlsx')
+    errorTest = runTest('TestCase/TestCase.xlsx')
+
     if len(errorTest) > 0:
         html = '接口自动化定期扫描，共有 ' + str(len(errorTest)) + ' 个异常接口，列表如下：' + ''
         for test in errorTest:
